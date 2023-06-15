@@ -3,6 +3,24 @@ POST http://localhost:9000/api/users HTTP/1.1
 content-type: application/json
 
 {
-    name:"Alissa Salazar",
-    email:"salazargamarraa@gmail.com"
+    "name":"Maria Gamarra",
+    "email":"MariaGamarra@gmail.com"
 }
+
+###
+GET http://localhost:9000/api/users HTTP/1.1
+
+###
+GET http://localhost:9000/api/users/648b32e60fdabe97ae3d8dd6 HTTP/1.1
+
+###
+PUT   http://localhost:9000/api/users/648b32e60fdabe97ae3d8dd6 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Milagros Salazar",    
+    "email":"salazargamarraa@gmail.com"
+}
+
+###
+DELETE http://localhost:9000/api/users/648b32e60fdabe97ae3d8dd6 HTTP/1.1
