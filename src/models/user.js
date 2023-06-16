@@ -1,4 +1,5 @@
 const mongoose = require("mongoose")
+console.log("ingreso a esquema")
 const userSchema = mongoose.Schema({
     name:{
         type:String,
@@ -10,4 +11,4 @@ const userSchema = mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model("User",userSchema)
+module.exports = mongoose.model("users",userSchema)
