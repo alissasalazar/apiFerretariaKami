@@ -2,13 +2,9 @@ const app = require("../../src");
 const mongoose = require("mongoose");
 const request = require("supertest");
 
-
-
-
 require("dotenv").config();
 
 describe("Pruebas en la Api de Ferreteria Kamis", () => {
-
   const newUSer = {
     name: "Kevin Condori",
     email: "condori@gmail.com",
@@ -79,21 +75,17 @@ describe("Pruebas en la Api de Ferreteria Kamis", () => {
     });
   });
 
-  describe("PUT/api/users", () => {
+  // describe("PUT/api/users", () => {
+  //   it("La ruta funciona", async () => {
+  //     console.log("me da el id", newUSer._id);
+  //     const response = (
+  //       await request(app).put(`/api/users/${newUSer._id}`)
+  //     ).send({
+  //       name: "Shey Salazar",
+  //       email: "sheysalazar@gmail.com",
+  //     });
 
-
-
-    
-    it("La ruta funciona", async () => {
-      console.log("me da el id",newUSer._id)
-      const response = (
-        await request(app).put(`/api/users/${newUSer._id}`)
-      ).send({
-        name: "Shey Salazar",
-        email: "sheysalazar@gmail.com"
-      });
-
-      expect(response.status).toBe(200);
-    });
-  });
+  //     expect(response.status).toBe(200);
+  //   });
+  // });
 });

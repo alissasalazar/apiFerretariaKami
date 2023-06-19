@@ -3,13 +3,13 @@ POST http://localhost:9000/api/users HTTP/1.1
 content-type: application/json
 
 {
-    "name":"Maria Gamarra",
-    "email":"MariaGamarra@gmail.com"
+    "name":"Jorge Coee",
+    "email":"jorge_coee@gmail.com"
 }
 
 ###
 GET http://localhost:9000/api/users HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5hbWUiOiJsb3RsIiwiZW1haWwiOiJsb3RsQGdtYWlsLmNvbSIsIl9pZCI6IjY0OGNjNDAxYjkzZDc3MjE5NWZlOTE5ZiJ9LCJpYXQiOjE2ODY5NDY4MTd9.hL_meoAbsdzWnTNGZ4IeXbD8S5iHO702AjvwJfMBCBI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5hbWUiOiJKb3JnZSBDb3VjaCIsImVtYWlsIjoiam9yZ2VfY291Y2hAZ21haWwuY29tIiwiX2lkIjoiNjQ5MDczYmI4NmY5MGUwN2UwZTA5NDNjIn0sImlhdCI6MTY4NzE4ODQxMX0.HxK7HkG-tEFr6rxx4FWbmNPgnBDsTGPmSbWvIfPW8n4
 ###
 GET http://localhost:9000/api/users/648b32e60fdabe97ae3d8dd6 HTTP/1.1
 
