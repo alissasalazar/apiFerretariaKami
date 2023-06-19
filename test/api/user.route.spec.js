@@ -1,7 +1,8 @@
 const app = require("../../src");
 const mongoose = require("mongoose");
 const request = require("supertest");
-const userSchema = require("../../src/models/user.js");
+
+
 
 
 require("dotenv").config();
