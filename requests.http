@@ -4,7 +4,9 @@ content-type: application/json
 
 {
     "name":"Jorge Coee",
-    "email":"jorge_coee@gmail.com"
+    "email":"jorge_coee@gmail.com",
+    "password":"123456",
+    "role":"Administrador"
 }
 
 ###
@@ -18,9 +20,16 @@ PUT   http://localhost:9000/api/users/648b32e60fdabe97ae3d8dd6 HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Milagros Salazar",    
-    "email":"salazargamarraa@gmail.com"
+    "email":"jorge_coee@gmail.com",
+    "password":"123456"
 }
 
 ###
 DELETE http://localhost:9000/api/users/648b32e60fdabe97ae3d8dd6 HTTP/1.1
+
+###
+POST http://localhost:9000/api/ HTTP/1.1
+{
+    "email":"jorge_coee@gmail.com",
+    "password":"123456"
+}
