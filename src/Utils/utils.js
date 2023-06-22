@@ -3,8 +3,15 @@ const bcrypt = require("bcrypt");
 
 const createToken = (user) => {
   console.log("que me da el user en utils", user);
+  // modificando el user para no tener referencia circular
+  const modifiedUser = {
+    email: user.email,
+    password: user.password,
+  };
   // Creando token con jsonwebtoken
-  const token = jwt.sign({ user }, "secretKey");
+  const token = jwt.sign({ user: modifiedUser }, "secretKey", {
+    expiresIn: "1h",
+  });
   return token;
 };
 
@@ -19,8 +26,9 @@ const verifyToken = (req, res, next) => {
   if (!bearerToken) {
     return res.status(401).json({ error: "message" });
   }
-  jwt.verify(token, "secretKey", (error, credentials) => {
-    console.log("que me da credentials");
+  //verificando el token
+  jwt.verify(bearerToken, "secretKey", (error, credentials) => {
+    console.log("que me da credentials", credentials);
     if (error) {
       return res.status(401).json({ error: "message" });
     }
@@ -39,4 +47,21 @@ const passwordValid = (user, password) => {
   return bcrypt.compareSync(password, user.password);
 };
 
-(module.exports = createToken), verifyToken, createHashPassword, passwordValid;
+const time = () =>{
+  const hora = new Date()
+  
+  const fechaDelivering = hora.toISOString().slice(0, 10);
+
+  const horaDelivering = hora.toString().slice(15, 25);
+
+  const horaFin = fechaDelivering + horaDelivering;
+  
+  return horaFin
+}
+module.exports = {
+  createToken,
+  verifyToken,
+  createHashPassword,
+  passwordValid,
+  time
+};
